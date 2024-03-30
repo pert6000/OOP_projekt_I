@@ -10,11 +10,15 @@ public class Main {
         summa sum = new summa(test);
         kogus k = new kogus(test);
 
+        kurtosis kurt = new kurtosis(test);
+
         System.out.println(s.getVäärtus());
         System.out.println(m.getVäärtus());
         System.out.println(v.getVäärtus());
         System.out.println(sum.getVäärtus());
         System.out.println(k.getVäärtus());
+
+        System.out.println(kurt.getVäärtus());
 
     }
 }
