@@ -8,4 +8,4 @@ autorid:
 
 Pert Koduvere
 
-jaagub Sass
+Jaagup Sass
