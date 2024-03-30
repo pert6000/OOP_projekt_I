@@ -8,6 +8,7 @@ public abstract class statistilineNäitaja {
     public abstract double arvuta(double[] a);
 
     public abstract String selgita();
+
     public double getVäärtus() {
         return väärtus;
     }

@@ -1,4 +1,4 @@
-public class vahemik extends statistilineNäitaja{
+public class vahemik extends statistilineNäitaja {
     private double väärtus;
 
 
