@@ -17,7 +17,6 @@ public class max extends statistilineNäitaja {
         return suurim;
     }
 
-
     public String selgita() {
         return "Andmete maksimaalne väärtus on " + väärtus;
     }
