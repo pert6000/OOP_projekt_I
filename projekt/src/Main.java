@@ -11,7 +11,12 @@ public class Main {
         kogus k = new kogus(test);
 
         kurtosis kurt = new kurtosis(test);
+        mediaan med = new mediaan(test);
+        asümmeetrijakordaja asüm = new asümmeetrijakordaja(test);
+        standardviga stanV = new standardviga(test);
 
+        System.out.println(stanV.getVäärtus());
+        System.out.println(asüm.getVäärtus());
         System.out.println(s.getVäärtus());
         System.out.println(m.getVäärtus());
         System.out.println(v.getVäärtus());
@@ -19,6 +24,8 @@ public class Main {
         System.out.println(k.getVäärtus());
 
         System.out.println(kurt.getVäärtus());
+
+        System.out.println(med.getVäärtus());
 
     }
 }
