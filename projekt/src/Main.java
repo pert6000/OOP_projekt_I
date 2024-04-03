@@ -1,18 +1,18 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        failistLugemine();
-    }
-    public static void failistLugemine() {
+
+
+    public static List<Double> failistLugemine() {
         System.out.println("Sisesta failitee: ");
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         String failitee = scanner.nextLine();
-        scanner.close();
 
         List<Double> arvud = new ArrayList<>(); // List kuhu arvud loetakse failist
 
@@ -34,6 +34,17 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("Ei leia faili");
         }
+        return arvud;
+    }
+
+    public static void main(String[] args) {
+
+        // tekst, mis kuvatakse ekraanile programmi käivitamisel
+
+        System.out.println("Tegu on programmiga, mille eesmärk on statistilise analüüsi teostamine");
+
+
+        List<Double> arvud = failistLugemine();
 
         // Arvutame failist saadud arvudega
         if (!arvud.isEmpty()) {
@@ -43,31 +54,43 @@ public class Main {
                 arvudeMassiiv[i] = arvud.get(i);
             }
 
-            // Teeb arvutused massiivi abil
-            max s = new max(arvudeMassiiv);
-            min m = new min(arvudeMassiiv);
-            vahemik v = new vahemik(arvudeMassiiv);
-            summa sum = new summa(arvudeMassiiv);
-            kogus k = new kogus(arvudeMassiiv);
-            kurtosis kurt = new kurtosis(arvudeMassiiv);
-            mediaan med = new mediaan(arvudeMassiiv);
-            asümmeetrijakordaja asüm = new asümmeetrijakordaja(arvudeMassiiv);
-            standardviga stanV = new standardviga(arvudeMassiiv);
-            mood mo = new mood(arvudeMassiiv);
-            dispersioon dis = new dispersioon(arvudeMassiiv);
+            HashMap<String, statistilineNäitaja> väärtused = new HashMap<String, statistilineNäitaja>();
 
-            // Prindib tulemused
-            System.out.println("Dispersioon: " + dis.getVäärtus());
-            System.out.println("Mood: " + mo.getVäärtus());
-            System.out.println("Standardviga: " + stanV.getVäärtus());
-            System.out.println("Asümmeetrijakordaja: " + asüm.getVäärtus());
-            System.out.println("Max: " + s.getVäärtus());
-            System.out.println("Min: " + m.getVäärtus());
-            System.out.println("Vahemik: " + v.getVäärtus());
-            System.out.println("Summa: " + sum.getVäärtus());
-            System.out.println("Kogus: " + k.getVäärtus());
-            System.out.println("Kurtosis: " + kurt.getVäärtus());
-            System.out.println("Mediaan: " + med.getVäärtus());
+            väärtused.put("max", new max(arvudeMassiiv));
+            väärtused.put("min", new min(arvudeMassiiv));
+            väärtused.put("v", new vahemik(arvudeMassiiv));
+            väärtused.put("avg", new keskmine(arvudeMassiiv));
+            väärtused.put("sum", new summa(arvudeMassiiv));
+            väärtused.put("len", new kogus(arvudeMassiiv));
+            väärtused.put("kurt", new kurtosis(arvudeMassiiv));
+            väärtused.put("med", new mediaan(arvudeMassiiv));
+            väärtused.put("asüm", new asümmeetrijakordaja(arvudeMassiiv));
+            väärtused.put("stdErr", new standardviga(arvudeMassiiv));
+            väärtused.put("md", new mood(arvudeMassiiv));
+            väärtused.put("disp", new dispersioon(arvudeMassiiv));
+            väärtused.put("h", new hälve(arvudeMassiiv));
+            väärtused.put("stdh", new standardhälve(arvudeMassiiv));
+
+
+            while (true) {
+
+                System.out.println("Sisesta soovitud arvutus: ");
+                java.util.Scanner sc = new java.util.Scanner(System.in);
+                String sisend = "";
+
+                if (sc.hasNextLine()) {
+                    sisend = sc.nextLine();
+                }
+
+                if(sisend.isEmpty()) {
+                    System.out.println("Programm lõpetas töö");
+                    break;
+                }
+
+                System.out.println(väärtused.get(sisend).selgita());
+
+            }
+
         } else {
             System.out.println("Failist ei leitud sobivaid arve arvutamiseks.");
         }

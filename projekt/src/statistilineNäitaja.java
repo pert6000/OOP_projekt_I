@@ -10,7 +10,7 @@ public abstract class statistilineNäitaja {
     public abstract String selgita();
 
     public double getVäärtus() {
-        return väärtus;
+        return Math.round(väärtus*100.0)/100.0;
     }
 
 }

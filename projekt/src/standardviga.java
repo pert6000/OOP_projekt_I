@@ -12,6 +12,6 @@ public class standardviga extends statistilineNäitaja{
         return (hälve / Math.sqrt(kogus));
     }
     public String selgita() {
-        return "Andmete standardviga on " + väärtus;
+        return "Andmete standardviga on " + this.getVäärtus();
     }
 }

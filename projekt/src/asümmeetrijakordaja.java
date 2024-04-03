@@ -17,6 +17,6 @@ public class asümmeetrijakordaja extends statistilineNäitaja{
         return (kogus * (keskmine - 3)) / (hälve * Math.sqrt(kogus - 1));
     }
     public String selgita() {
-        return "Andmete asümmeetriline kordaja on " + väärtus;
+        return "Andmete asümmeetriline kordaja on " + this.getVäärtus();
     }
 }

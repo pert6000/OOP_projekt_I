@@ -26,6 +26,6 @@ public class mood extends statistilineNäitaja{
         return mood;
     }
     public String selgita() {
-        return "Arv mida failis kõige rohkem esineb on " + väärtus;
+        return "Arv mida failis kõige rohkem esineb on " + this.getVäärtus();
     }
 }

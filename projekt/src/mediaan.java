@@ -15,6 +15,6 @@ public class mediaan extends statistilineNäitaja{
         }
     }
     public String selgita() {
-        return "Andmete mediaan on " + väärtus;
+        return "Andmete mediaan on " + this.getVäärtus();
     }
 }

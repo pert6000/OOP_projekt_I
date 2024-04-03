@@ -19,6 +19,6 @@ public class vahemik extends statistilineNäitaja {
 
 
     public String selgita() {
-        return "Andmete minimaalne väärtus on " + väärtus;
+        return "Andmete minimaalne väärtus on " + this.getVäärtus();
     }
 }

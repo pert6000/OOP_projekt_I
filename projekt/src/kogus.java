@@ -10,7 +10,7 @@ public class kogus extends statistilineNäitaja {
     }
 
     public String selgita() {
-        return "Andmepuntkide kogus on " + väärtus;
+        return "Andmepuntkide kogus on " + this.getVäärtus();
     }
 }
 

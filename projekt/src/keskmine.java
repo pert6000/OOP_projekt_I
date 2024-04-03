@@ -14,6 +14,6 @@ public class keskmine extends statistilineNäitaja{
     }
 
     public String selgita() {
-        return "Andmete keskmine, s.t oodatud väärtus on " + väärtus;
+        return "Andmete keskmine, s.t oodatud väärtus on " + this.getVäärtus();
     }
 }

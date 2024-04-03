@@ -16,12 +16,12 @@ public class hälve extends statistilineNäitaja{
             hälve_summa += Math.pow((el - kesk.getVäärtus()), 2);
         }
 
-        double hälve = hälve_summa/ k.getVäärtus();
+        double hälve = hälve_summa/ (k.getVäärtus() -1);
 
         return hälve;
     }
 
     public String selgita() {
-        return "Andmete hälve on " + väärtus;
+        return "Andmete hälve on " + this.getVäärtus();
     }
 }

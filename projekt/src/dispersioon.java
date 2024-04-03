@@ -20,6 +20,6 @@ public class dispersioon extends statistilineNäitaja{
         return vaheKesk / (kogus - 1);
     }
     public String selgita() {
-        return "Andmete dispersioon on " + väärtus;
+        return "Andmete dispersioon on " + this.getVäärtus();
     }
 }

@@ -16,6 +16,6 @@ public class summa extends statistilineNäitaja {
     }
 
     public String selgita() {
-        return "Andmepuntkide summa on " + väärtus;
+        return "Andmepuntkide summa on " + this.getVäärtus();
     }
 }
