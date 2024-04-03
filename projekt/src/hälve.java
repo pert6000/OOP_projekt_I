@@ -22,6 +22,6 @@ public class hälve extends statistilineNäitaja{
     }
 
     public String selgita() {
-        return "Andmete hälve on " + this.getVäärtus();
+        return "Andmete hälve e. disperioon on " + this.getVäärtus();
     }
 }

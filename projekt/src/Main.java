@@ -40,11 +40,20 @@ public class Main {
     public static void main(String[] args) {
 
         // tekst, mis kuvatakse ekraanile programmi käivitamisel
-
-        System.out.println("Tegu on programmiga, mille eesmärk on statistilise analüüsi teostamine");
+        System.out.println("//////");
+        System.out.println("Tegu on programmiga, mille abil saab teostada andmete statistilist analüüsi.");
+        System.out.println("Andmefailile viitamise järel saab pärida erinevaid näitajaid andmestiku kohta.");
+        System.out.println("//////\n");
 
 
         List<Double> arvud = failistLugemine();
+
+        String tekst = "Võimalikud tegevused on:\nMaksimum - max \nMiinimum - min\n" +
+                "Vahemik - rng\nKeskmine - avg \nSumma - sum \nKogus - len \nEkstsess (näitab andmete püstakust) - kurt \n" +
+                "Mediaan - med \nAsümmeetrijakordaja - asüm \nStandardviga - se\nMood - md\n" +
+                "Hälve (dispersioon) - h\nStandardhälve (kui hajunud andmed on keskmise ümber)- sd\n\nLõpeta töö - jäta tühjaks\n";
+
+        System.out.println(tekst);
 
         // Arvutame failist saadud arvudega
         if (!arvud.isEmpty()) {
@@ -58,18 +67,18 @@ public class Main {
 
             väärtused.put("max", new max(arvudeMassiiv));
             väärtused.put("min", new min(arvudeMassiiv));
-            väärtused.put("v", new vahemik(arvudeMassiiv));
+            väärtused.put("rng", new vahemik(arvudeMassiiv));
             väärtused.put("avg", new keskmine(arvudeMassiiv));
             väärtused.put("sum", new summa(arvudeMassiiv));
             väärtused.put("len", new kogus(arvudeMassiiv));
             väärtused.put("kurt", new kurtosis(arvudeMassiiv));
             väärtused.put("med", new mediaan(arvudeMassiiv));
             väärtused.put("asüm", new asümmeetrijakordaja(arvudeMassiiv));
-            väärtused.put("stdErr", new standardviga(arvudeMassiiv));
+            väärtused.put("se", new standardviga(arvudeMassiiv));
             väärtused.put("md", new mood(arvudeMassiiv));
-            väärtused.put("disp", new dispersioon(arvudeMassiiv));
             väärtused.put("h", new hälve(arvudeMassiiv));
-            väärtused.put("stdh", new standardhälve(arvudeMassiiv));
+            väärtused.put("sd", new standardhälve(arvudeMassiiv));
+
 
 
             while (true) {

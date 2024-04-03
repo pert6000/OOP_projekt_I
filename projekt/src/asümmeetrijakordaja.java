@@ -1,22 +1,28 @@
 import java.util.Arrays;
 
-public class asümmeetrijakordaja extends statistilineNäitaja{
+public class asümmeetrijakordaja extends statistilineNäitaja {
     private double väärtus;
+
     public asümmeetrijakordaja(double[] a) {
         super(a);
     }
-    public double arvuta(double[] a ){
-        hälve h = new hälve(a);
-        keskmine avg = new keskmine(a);
-        kogus k = new kogus(a);
 
-        double keskmine = avg.getVäärtus();
-        double kogus = k.getVäärtus();
-        double hälve = h.getVäärtus();
+    public double arvuta(double[] a) {
+        keskmine k = new keskmine(a);
+        mediaan m = new mediaan(a);
+        standardhälve s = new standardhälve(a);
 
-        return (kogus * (keskmine - 3)) / (hälve * Math.sqrt(kogus - 1));
+        return 3 * (k.getVäärtus() - m.getVäärtus()) / s.getVäärtus();
     }
+
     public String selgita() {
-        return "Andmete asümmeetriline kordaja on " + this.getVäärtus();
+        String tulem = "Andmete asümmeetriline kordaja on " + this.getVäärtus() + ", see tähendab, et ";
+        if (this.getVäärtus() > 0)
+            tulem += "andmetes esineb vasakkalle";
+        else if (this.getVäärtus() < 0) {
+            tulem += "andmetes esineb paremkalle";
+        } else
+            tulem += "andmetes ei esine kallet";
+        return tulem;
     }
 }

@@ -13,6 +13,6 @@ public class standardhälve extends statistilineNäitaja{
     }
 
     public String selgita() {
-        return "Andmete standardhäve on " + this.getVäärtus();
+        return "Andmete standardhälve on " + this.getVäärtus();
     }
 }
