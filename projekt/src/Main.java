@@ -119,7 +119,8 @@ public class Main {
                 if(sisend.isEmpty()) {
                     System.out.println("Programm lõpetas töö");
                     break;
-                } else if (sisend.equals("all")) {
+                }
+                if (sisend.equals("all")) {
                     kirjutaFaili(väärtused, failitee);
                 }else
                     System.out.println(väärtused.get(sisend).selgita());
